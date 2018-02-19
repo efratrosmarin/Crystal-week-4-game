@@ -16,6 +16,11 @@ var win = 0;
 
 var previous = 0;
 
+var images =["./assets/images/img1.jpeg",
+"./assets/images/img2.jpeg",
+"./assets/images/img3.jpeg",
+"./assets/images/img4.jpeg"];
+
 
 
 var resetAndStart = function() {
@@ -40,14 +45,19 @@ var random = Math.floor(Math.random() *  11)+1
         
         "class": "crystal",
         "data-random":random
-        
+         
     });
+
+    crystal.css({
+        "background-image":"url('" + images[i] + "')",
+        "background-size":"cover"
+
+    })
   
      $(".crystals").append(crystal);
     
     } 
 
-    // $("#previous").html("Total Score: " + previous);
 } 
 
 
