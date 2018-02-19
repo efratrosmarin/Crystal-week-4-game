@@ -1,0 +1,22 @@
+h1{
+
+    text-align: center;
+    margin: 50px;
+}
+
+
+.crystals{
+display: flex;
+justify-content:space-around;
+align-items: center;
+padding: 20px;
+margin: 50px;
+
+}
+
+.crystal{
+
+    border: 1px solid blue;
+    height:200px;
+    width: 200px;
+}
