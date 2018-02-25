@@ -8,6 +8,9 @@
 //if total score (previus + new number) > copmuter number = lose
 //new number should generate after win or lose
 
+
+//all variables for game
+
 var random_result;
 
 var lost = 0;
@@ -16,21 +19,32 @@ var win = 0;
 
 var previous = 0;
 
-var images =["./assets/images/img1.jpeg",
+var images =[
+"./assets/images/img1.jpeg",
 "./assets/images/img2.jpeg",
 "./assets/images/img3.jpeg",
-"./assets/images/img4.jpeg"];
+"./assets/images/img4.jpeg"
+];
 
 
+//rest and start function
 
 var resetAndStart = function() {
 
-    $(".crystals").empty(crystal)
+    $(".images").empty(crystal)
+
+//computer guess random result 19-120
 
 
 random_result = Math.floor(Math.random() * 101)+19 
 
-$("#result").text("Random Results: " + random_result);
+//write elements to DOM 
+
+$("#result").text("Try to Match: " + random_result);
+$("#previous").text("Total Score:" + previous);
+$("#win").text("You Win:" +  win);
+$("#lost").text("You Lost:"  + lost);
+
 
 
 // console.log(random_result);
@@ -41,31 +55,22 @@ var random = Math.floor(Math.random() *  11)+1
 
     var crystal = $("<div>");
         
-    crystal.attr({
-        
-        "class": "crystal",
-        "data-random":random
-         
-    });
+    crystal.attr({"class": "crystal","data-random":random
+    
+});
 
     crystal.css({
         "background-image":"url('" + images[i] + "')",
         "background-size":"cover"
-
     })
   
-     $(".crystals").append(crystal);
+     $(".images").append(crystal);
     
     } 
 
 } 
 
-
-
-
 resetAndStart();
-
-
 
 $(document).on("click", ".crystal", function () {
 var num = parseInt($(this).attr("data-random"));
@@ -79,7 +84,7 @@ console.log(previous);
 if(previous > random_result){ 
     
     lost++; 
-    $("#lost").text( "B00! - " + lost);
+    $("#lost").text( " " + lost);
 
     previous= 0;
 
@@ -91,7 +96,7 @@ if(previous > random_result){
 else if(previous === random_result){ 
     
     win++;  
-    $("#win").text("YAY! - " + win);
+    $("#win").text(" " + win);
     previous=0;
 
     resetAndStart(); 
