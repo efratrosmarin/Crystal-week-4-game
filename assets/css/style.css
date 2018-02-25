@@ -1,8 +1,4 @@
-body{
 
-    background-image: url("../images/krypton.jpg");
-    background-image:cover;
-}
 
 h1{
 
@@ -57,7 +53,7 @@ margin: 50px;
 h2{
 
     margin:50px;
-   color: white;
+   color: orangered;
    letter-spacing: 2px;
 
 }
